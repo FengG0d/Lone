@@ -49,7 +49,7 @@ class AuthBypass : Module() {
     private val brLangMap : HashMap<String, String> by lazy {
         val map = HashMap<String, String>()
 
-        val localeJson = JsonParser().parse(AuthBypass::class.java.classLoader.getResourceAsStream("assets/minecraft/fdpclient/misc/item_names_in_pt_BR.json").reader(Charsets.UTF_8)).asJsonObject
+        val localeJson = JsonParser().parse(AuthBypass::class.java.classLoader.getResourceAsStream("assets/minecraft/lone/misc/item_names_in_pt_BR.json").reader(Charsets.UTF_8)).asJsonObject
 
         brLangMap.clear()
         for ((key, element) in localeJson.entrySet()) {

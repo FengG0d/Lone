@@ -1,8 +1,3 @@
-/*
- * FDPClient Hacked Client
- * A free open source mixin-based injection hacked client for Minecraft using Minecraft Forge by LiquidBounce.
- * https://github.com/UnlegitMC/FDPClient/
- */
 package net.ccbluex.liquidbounce.utils.misc;
 
 import kotlin.text.Charsets;
@@ -60,7 +55,7 @@ public final class StringUtils {
     public static String toPinyin(final String inString, final String fill) {
         if(pinyinMap.isEmpty()) {
             try {
-                String[] dict = IOUtils.toString(StringUtils.class.getClassLoader().getResourceAsStream("assets/minecraft/fdpclient/misc/pinyin"), Charsets.UTF_8).split(";");
+                String[] dict = IOUtils.toString(StringUtils.class.getClassLoader().getResourceAsStream("assets/minecraft/lone/misc/pinyin"), Charsets.UTF_8).split(";");
                 for(String word:dict){
                     String[] wordData=word.split(",");
                     pinyinMap.put(wordData[0],wordData[1]);

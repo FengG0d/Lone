@@ -1,8 +1,3 @@
-/*
- * FDPClient Hacked Client
- * A free open source mixin-based injection hacked client for Minecraft using Minecraft Forge by LiquidBounce.
- * https://github.com/UnlegitMC/FDPClient/
- */
 package net.ccbluex.liquidbounce.script.remapper
 
 import net.ccbluex.liquidbounce.utils.ClientUtils
@@ -28,7 +23,7 @@ object Remapper {
             return
         // Load srg
         ClientUtils.logInfo("[Remapper] Loading srg...")
-        parseSrg(IOUtils.readLines(Remapper::class.java.classLoader.getResourceAsStream("assets/minecraft/fdpclient/scriptapi/mcp-stable_22.srg")))
+        parseSrg(IOUtils.readLines(Remapper::class.java.classLoader.getResourceAsStream("assets/minecraft/lone/scriptapi/mcp-stable_22.srg")))
         srgLoaded = true
         ClientUtils.logInfo("[Remapper] Loaded srg.")
     }

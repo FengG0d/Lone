@@ -1,13 +1,8 @@
-/*
- * FDPClient Hacked Client
- * A free open source mixin-based injection hacked client for Minecraft using Minecraft Forge by LiquidBounce.
- * https://github.com/UnlegitMC/FDPClient/
- */
 package net.ccbluex.liquidbounce.ui.client.hud.element.elements
 
 import net.ccbluex.liquidbounce.LiquidBounce
-import net.ccbluex.liquidbounce.font.CFontRenderer
-import net.ccbluex.liquidbounce.font.FontLoaders
+import net.ccbluex.liquidbounce.ui.font.cfont.CFontRenderer
+import net.ccbluex.liquidbounce.ui.font.cfont.FontLoaders
 import net.ccbluex.liquidbounce.ui.client.hud.designer.GuiHudDesigner
 import net.ccbluex.liquidbounce.ui.client.hud.element.Border
 import net.ccbluex.liquidbounce.ui.client.hud.element.Element
@@ -18,7 +13,6 @@ import net.ccbluex.liquidbounce.utils.render.EaseUtils
 import net.ccbluex.liquidbounce.utils.render.RenderUtils
 import net.ccbluex.liquidbounce.value.BoolValue
 import net.ccbluex.liquidbounce.value.IntegerValue
-import net.minecraft.client.gui.FontRenderer
 import org.lwjgl.opengl.GL11
 import java.awt.Color
 import kotlin.math.max
@@ -98,7 +92,7 @@ class Notification(
     /**
      * Draw notification
      */
-    fun drawNotification(index: Int, font: CFontRenderer, alpha: Int, blurRadius: Float, x: Float, y: Float, scale: Float,ContentShadow: Boolean,TitleShadow: Boolean,MotionBlur: Boolean): Boolean {
+    fun drawNotification(index: Int, font: CFontRenderer, alpha: Int, blurRadius: Float, x: Float, y: Float, scale: Float, ContentShadow: Boolean, TitleShadow: Boolean, MotionBlur: Boolean): Boolean {
         this.width = 100.coerceAtLeast(font.getStringWidth(content)
             .coerceAtLeast(font.getStringWidth(title)) + 15)
         val realY = -(index+1) * height

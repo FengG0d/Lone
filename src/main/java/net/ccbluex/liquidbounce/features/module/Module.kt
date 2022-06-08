@@ -1,8 +1,3 @@
-/*
- * FDPClient Hacked Client
- * A free open source mixin-based injection hacked client for Minecraft using Minecraft Forge by LiquidBounce.
- * https://github.com/UnlegitMC/FDPClient/
- */
 package net.ccbluex.liquidbounce.features.module
 
 import net.ccbluex.liquidbounce.LiquidBounce
@@ -11,12 +6,10 @@ import net.ccbluex.liquidbounce.features.module.modules.client.HUD
 import net.ccbluex.liquidbounce.features.module.modules.client.Modules
 import net.ccbluex.liquidbounce.ui.client.hud.element.elements.Notification
 import net.ccbluex.liquidbounce.ui.client.hud.element.elements.NotifyType
-import net.ccbluex.liquidbounce.ui.i18n.LanguageManager
 import net.ccbluex.liquidbounce.utils.ClassUtils
 import net.ccbluex.liquidbounce.utils.ClientUtils
 import net.ccbluex.liquidbounce.utils.MinecraftInstance
 import net.ccbluex.liquidbounce.utils.render.Animation
-import net.ccbluex.liquidbounce.utils.render.ColorUtils.stripColor
 import net.ccbluex.liquidbounce.utils.render.EaseUtils
 import net.ccbluex.liquidbounce.value.Value
 import org.lwjgl.input.Keyboard
@@ -24,8 +17,6 @@ import org.lwjgl.input.Keyboard
 open class Module : MinecraftInstance(), Listenable {
     // Module information
     var name: String
-    var localizedName = ""
-        get() = field.ifEmpty { name }
     var description: String
     var category: ModuleCategory
     var keyBind = Keyboard.CHAR_NONE
@@ -51,10 +42,6 @@ open class Module : MinecraftInstance(), Listenable {
     val moduleInfo = javaClass.getAnnotation(ModuleInfo::class.java)!!
     var splicedName = ""
         get() {
-//            val translatedName=LanguageManager.replace(localizedName)
-//            if(field.replace(" ","") != translatedName){
-//                field=StringUtils.toCompleteString(RegexUtils.match(translatedName, "[A-Z][a-z]*"))
-//            }
             if (field.isEmpty()) {
                 val sb = StringBuilder()
                 val arr = name.toCharArray()
@@ -72,7 +59,7 @@ open class Module : MinecraftInstance(), Listenable {
 
     init {
         name = moduleInfo.name
-        description = "%module.$name.description%"
+        description = moduleInfo.description
         category = moduleInfo.category
         keyBind = moduleInfo.keyBind
         array = moduleInfo.array
@@ -80,10 +67,6 @@ open class Module : MinecraftInstance(), Listenable {
         autoDisable = moduleInfo.autoDisable
         moduleCommand = moduleInfo.moduleCommand
         triggerType = moduleInfo.triggerType
-    }
-
-    open fun onLoad() {
-        localizedName = "%module.$name.name%"
     }
 
     // Current state of module
@@ -98,10 +81,10 @@ open class Module : MinecraftInstance(), Listenable {
             if (!LiquidBounce.isStarting) {
                 if (value) {
                     Modules.playSound(true)
-                    LiquidBounce.hud.addNotification(Notification("%notify.module.title%", LanguageManager.getAndFormat("notify.module.enable", localizedName), NotifyType.SUCCESS))
+                    LiquidBounce.hud.addNotification(Notification("Toggle", "Enabled $name", NotifyType.SUCCESS))
                 } else {
                     Modules.playSound(false)
-                    LiquidBounce.hud.addNotification(Notification("%notify.module.title%", LanguageManager.getAndFormat("notify.module.disable", localizedName), NotifyType.ERROR))
+                    LiquidBounce.hud.addNotification(Notification("Toggle", "Disabled $name", NotifyType.ERROR))
                 }
             }
 
@@ -136,7 +119,13 @@ open class Module : MinecraftInstance(), Listenable {
         }
         set(value) {
             if (slideAnimation == null || (slideAnimation != null && slideAnimation!!.to != value.toDouble())) {
-                slideAnimation = Animation(EaseUtils.EnumEasingType.valueOf(HUD.arraylistXAxisAnimTypeValue.get()), EaseUtils.EnumEasingOrder.valueOf(HUD.arraylistXAxisAnimOrderValue.get()), field.toDouble(), value.toDouble(), HUD.arraylistXAxisAnimSpeedValue.get() * 30L).start()
+                slideAnimation = Animation(
+                    EaseUtils.EnumEasingType.valueOf(HUD.arraylistXAxisAnimTypeValue.get()),
+                    EaseUtils.EnumEasingOrder.valueOf(HUD.arraylistXAxisAnimOrderValue.get()),
+                    field.toDouble(),
+                    value.toDouble(),
+                    HUD.arraylistXAxisAnimSpeedValue.get() * 30L
+                ).start()
             }
         }
     var yPosAnimation: Animation? = null
@@ -152,19 +141,19 @@ open class Module : MinecraftInstance(), Listenable {
         }
         set(value) {
             if (yPosAnimation == null || (yPosAnimation != null && yPosAnimation!!.to != value.toDouble())) {
-                yPosAnimation = Animation(EaseUtils.EnumEasingType.valueOf(HUD.arraylistYAxisAnimTypeValue.get()), EaseUtils.EnumEasingOrder.valueOf(HUD.arraylistYAxisAnimOrderValue.get()), field.toDouble(), value.toDouble(), HUD.arraylistYAxisAnimSpeedValue.get() * 30L).start()
+                yPosAnimation = Animation(
+                    EaseUtils.EnumEasingType.valueOf(HUD.arraylistYAxisAnimTypeValue.get()),
+                    EaseUtils.EnumEasingOrder.valueOf(HUD.arraylistYAxisAnimOrderValue.get()),
+                    field.toDouble(),
+                    value.toDouble(),
+                    HUD.arraylistYAxisAnimSpeedValue.get() * 30L
+                ).start()
             }
         }
 
     // Tag
     open val tag: String?
         get() = null
-
-    val tagName: String
-        get() = "$name${if (tag == null) "" else " §7$tag"}"
-
-    val colorlessTagName: String
-        get() = "$name${if (tag == null) "" else " " + stripColor(tag!!)}"
 
     var width = 10
 

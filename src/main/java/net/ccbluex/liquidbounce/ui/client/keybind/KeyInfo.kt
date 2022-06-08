@@ -3,11 +3,10 @@ package net.ccbluex.liquidbounce.ui.client.keybind
 import net.ccbluex.liquidbounce.LiquidBounce
 import net.ccbluex.liquidbounce.features.macro.Macro
 import net.ccbluex.liquidbounce.features.module.Module
-import net.ccbluex.liquidbounce.font.FontLoaders
+import net.ccbluex.liquidbounce.ui.font.cfont.FontLoaders
 import net.ccbluex.liquidbounce.ui.font.Fonts
-import net.ccbluex.liquidbounce.ui.i18n.LanguageManager
+import net.ccbluex.liquidbounce.utils.misc.LanguageManager
 import net.ccbluex.liquidbounce.utils.MinecraftInstance
-import net.ccbluex.liquidbounce.utils.extensions.drawCenteredString
 import net.ccbluex.liquidbounce.utils.render.RenderUtils
 import net.minecraft.client.audio.PositionedSoundRecord
 import net.minecraft.util.ResourceLocation
@@ -71,7 +70,7 @@ class KeyInfo(
                 GL11.glPushMatrix()
                 GL11.glTranslatef(0F, yOffset, 0F)
 
-                Fonts.font40.drawString(module.localizedName, 12F, fontHeight, Color.DARK_GRAY.rgb, false)
+                Fonts.font40.drawString(module.name, 12F, fontHeight, Color.DARK_GRAY.rgb, false)
                 Fonts.font40.drawString(
                     "-", baseTabWidth - 12F - Fonts.font40.getStringWidth("-"), fontHeight, Color.RED.rgb, false
                 )

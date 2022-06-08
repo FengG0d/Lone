@@ -7,7 +7,7 @@ import jdk.nashorn.api.scripting.ScriptUtils
 import net.ccbluex.liquidbounce.LiquidBounce
 import net.ccbluex.liquidbounce.features.command.Command
 import net.ccbluex.liquidbounce.features.module.Module
-import net.ccbluex.liquidbounce.launch.data.legacyui.scriptOnline.Subscriptions
+import net.ccbluex.liquidbounce.ui.client.scriptMenu.scriptOnline.Subscriptions
 import net.ccbluex.liquidbounce.script.api.*
 import net.ccbluex.liquidbounce.script.api.global.Chat
 import net.ccbluex.liquidbounce.script.api.global.Setting
@@ -15,7 +15,6 @@ import net.ccbluex.liquidbounce.utils.ClientUtils
 import net.ccbluex.liquidbounce.utils.MinecraftInstance
 import java.io.File
 import java.util.function.Function
-import javax.script.ScriptEngineManager
 
 class Script(private val scriptFile: File) : MinecraftInstance() {
 
@@ -122,7 +121,7 @@ class Script(private val scriptFile: File) : MinecraftInstance() {
         if (!scriptText.lines().first().contains("api_version=2")) {
             ClientUtils.logWarn("[ScriptAPI] Running script '${scriptFile.name}' with legacy support.")
             val legacyScript =
-                LiquidBounce::class.java.getResource("/assets/minecraft/fdpclient/scriptapi/legacy.js").readText()
+                LiquidBounce::class.java.getResource("/assets/minecraft/lone/scriptapi/legacy.js").readText()
             scriptEngine.eval(legacyScript)
         }
     }

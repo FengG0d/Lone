@@ -1,8 +1,3 @@
-/*
- * FDPClient Hacked Client
- * A free open source mixin-based injection hacked client for Minecraft using Minecraft Forge by LiquidBounce.
- * https://github.com/UnlegitMC/FDPClient/
- */
 package net.ccbluex.liquidbounce.injection.forge.mixins.client;
 
 import com.guimc.fuckpcl.PCLChecker;
@@ -245,7 +240,7 @@ public abstract class MixinMinecraft {
     @Inject(method = "setWindowIcon", at = @At("HEAD"), cancellable = true)
     private void setWindowIcon(CallbackInfo callbackInfo) throws IOException {
         if (Util.getOSType() != Util.EnumOS.OSX) {
-            BufferedImage image = ImageIO.read(this.getClass().getResourceAsStream("/assets/minecraft/fdpclient/misc/icon.png"));
+            BufferedImage image = ImageIO.read(this.getClass().getResourceAsStream("/assets/minecraft/lone/misc/icon.png"));
             if(image.getWidth() != 32 || image.getHeight() != 32) {
                 image = ImageUtils.resizeImage(image, 32, 32);
             }

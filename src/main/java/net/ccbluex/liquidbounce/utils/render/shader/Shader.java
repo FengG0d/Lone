@@ -1,8 +1,3 @@
-/*
- * FDPClient Hacked Client
- * A free open source mixin-based injection hacked client for Minecraft using Minecraft Forge by LiquidBounce.
- * https://github.com/UnlegitMC/FDPClient/
- */
 package net.ccbluex.liquidbounce.utils.render.shader;
 
 import net.ccbluex.liquidbounce.utils.ClientUtils;
@@ -24,11 +19,11 @@ public abstract class Shader extends MinecraftInstance {
         int vertexShaderID, fragmentShaderID;
 
         try {
-            final InputStream vertexStream = getClass().getResourceAsStream("/assets/minecraft/fdpclient/shader/vertex.vert");
+            final InputStream vertexStream = getClass().getResourceAsStream("/assets/minecraft/lone/shader/vertex.vert");
             vertexShaderID = createShader(IOUtils.toString(vertexStream), ARBVertexShader.GL_VERTEX_SHADER_ARB);
             IOUtils.closeQuietly(vertexStream);
 
-            final InputStream fragmentStream = getClass().getResourceAsStream("/assets/minecraft/fdpclient/shader/fragment/" + fragmentShader);
+            final InputStream fragmentStream = getClass().getResourceAsStream("/assets/minecraft/lone/shader/fragment/" + fragmentShader);
             fragmentShaderID = createShader(IOUtils.toString(fragmentStream), ARBFragmentShader.GL_FRAGMENT_SHADER_ARB);
             IOUtils.closeQuietly(fragmentStream);
         }catch(final Exception e) {

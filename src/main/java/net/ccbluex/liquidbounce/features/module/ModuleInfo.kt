@@ -1,8 +1,3 @@
-/*
- * FDPClient Hacked Client
- * A free open source mixin-based injection hacked client for Minecraft using Minecraft Forge by LiquidBounce.
- * https://github.com/UnlegitMC/FDPClient/
- */
 package net.ccbluex.liquidbounce.features.module
 
 import org.lwjgl.input.Keyboard
@@ -10,6 +5,7 @@ import org.lwjgl.input.Keyboard
 @kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
 annotation class ModuleInfo(
     val name: String,
+    val description: String = "No describe",
     val category: ModuleCategory,
     val keyBind: Int = Keyboard.CHAR_NONE,
     val canEnable: Boolean = true,
