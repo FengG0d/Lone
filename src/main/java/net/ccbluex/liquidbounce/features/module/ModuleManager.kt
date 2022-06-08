@@ -35,8 +35,6 @@ class ModuleManager : Listenable {
 
         modules.forEach { it.onInitialize() }
 
-        modules.forEach { it.onLoad() }
-
         LiquidBounce.eventManager.registerListener(AutoDisable)
 
         ClientUtils.logInfo("[ModuleManager] Loaded ${modules.size} modules.")
