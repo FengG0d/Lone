@@ -1,7 +1,7 @@
 /*
  * Decompiled with CFR 0.136.
  */
-package net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.style.styles.novoline;
+package net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.style.styles.novoline;
 
 
 import com.google.common.collect.Lists;
@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class ClickyUI extends GuiScreen {
-    public static ArrayList<net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.style.styles.novoline.Window> windows = Lists.newArrayList();
+    public static ArrayList<net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.style.styles.novoline.Window> windows = Lists.newArrayList();
     public static boolean binding;
     public int scrollVelocity;
 

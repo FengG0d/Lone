@@ -1,14 +1,13 @@
-package net.ccbluex.liquidbounce.ui.client.clickgui.clickgui;
+package net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce;
 
 import net.ccbluex.liquidbounce.LiquidBounce;
 import net.ccbluex.liquidbounce.features.module.Module;
 import net.ccbluex.liquidbounce.features.module.ModuleCategory;
-import net.ccbluex.liquidbounce.ui.client.clickgui.ClickGUIModule;
-import net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.elements.ButtonElement;
-import net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.elements.Element;
-import net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.elements.ModuleElement;
-import net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.style.Style;
-import net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.style.styles.SlowlyStyle;
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.elements.ButtonElement;
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.elements.Element;
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.elements.ModuleElement;
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.style.Style;
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.style.styles.SlowlyStyle;
 import net.ccbluex.liquidbounce.utils.render.RenderUtils;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.GlStateManager;

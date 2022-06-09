@@ -1,4 +1,4 @@
-package net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.style.styles.novoline;
+package net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.style.styles.novoline;
 
 
 import com.google.common.collect.Lists;
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class Window {
     public final ModuleCategory category;
-    public final ArrayList<net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.style.styles.novoline.Button> buttons = Lists.newArrayList();
+    public final ArrayList<net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.style.styles.novoline.Button> buttons = Lists.newArrayList();
     public boolean drag;
     public boolean extended;
     public int x;
@@ -41,10 +41,10 @@ public class Window {
         for (Module c : LiquidBounce.moduleManager.getModules()) {
             if (c.getCategory() != category)
                 continue;
-            buttons.add(new net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.style.styles.novoline.Button(c, x + 5, y2));
+            buttons.add(new net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.style.styles.novoline.Button(c, x + 5, y2));
             y2 += 15;//15
         }
-        for (net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.style.styles.novoline.Button b2 : buttons) {
+        for (net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.style.styles.novoline.Button b2 : buttons) {
             b2.setParent(this);
         }
     }
@@ -57,7 +57,7 @@ public class Window {
         int current = 0;
         int iY = y + 22;
         totalY = 17;
-        for (net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.style.styles.novoline.Button b3 : buttons) {
+        for (net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.style.styles.novoline.Button b3 : buttons) {
             b3.y = (int) (iY - translate.getY());
             iY += 15;
             totalY += 15;

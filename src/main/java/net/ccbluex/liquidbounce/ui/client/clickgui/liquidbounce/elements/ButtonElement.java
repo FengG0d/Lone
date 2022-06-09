@@ -1,4 +1,4 @@
-package net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.elements;
+package net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.elements;
 
 import net.ccbluex.liquidbounce.LiquidBounce;
 

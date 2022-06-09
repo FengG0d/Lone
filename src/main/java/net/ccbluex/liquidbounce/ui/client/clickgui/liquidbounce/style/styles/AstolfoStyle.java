@@ -1,10 +1,10 @@
-package net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.style.styles;
+package net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.style.styles;
 
-import net.ccbluex.liquidbounce.ui.client.clickgui.ClickGUIModule;
-import net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.Panel;
-import net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.elements.ButtonElement;
-import net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.elements.ModuleElement;
-import net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.style.Style;
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.ClickGUIModule;
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.Panel;
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.elements.ButtonElement;
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.elements.ModuleElement;
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.style.Style;
 import net.ccbluex.liquidbounce.ui.font.Fonts;
 import net.ccbluex.liquidbounce.utils.misc.LanguageManager;
 import net.ccbluex.liquidbounce.ui.font.GameFontRenderer;

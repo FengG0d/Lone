@@ -1,4 +1,4 @@
-package net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.style.styles.novoline;
+package net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.style.styles.novoline;
 
 
 

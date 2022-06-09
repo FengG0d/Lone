@@ -1,8 +1,8 @@
-package net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.style;
+package net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.style;
 
-import net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.Panel;
-import net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.elements.ButtonElement;
-import net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.elements.ModuleElement;
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.Panel;
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.elements.ButtonElement;
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.elements.ModuleElement;
 import net.ccbluex.liquidbounce.utils.MinecraftInstance;
 
 public abstract class Style extends MinecraftInstance {

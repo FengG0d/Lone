@@ -1,4 +1,4 @@
-package net.ccbluex.liquidbounce.ui.client.clickgui;
+package net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
@@ -7,9 +7,9 @@ import com.google.gson.JsonParser;
 import net.ccbluex.liquidbounce.LiquidBounce;
 import net.ccbluex.liquidbounce.file.FileConfig;
 import net.ccbluex.liquidbounce.file.FileManager;
-import net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.Panel;
-import net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.elements.Element;
-import net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.elements.ModuleElement;
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.Panel;
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.elements.Element;
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.elements.ModuleElement;
 import net.ccbluex.liquidbounce.utils.ClientUtils;
 
 import java.io.File;

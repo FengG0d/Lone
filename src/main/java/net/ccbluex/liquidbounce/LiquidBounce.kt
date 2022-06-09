@@ -10,9 +10,9 @@ import net.ccbluex.liquidbounce.features.special.CombatManager
 import net.ccbluex.liquidbounce.features.special.ServerSpoof
 import net.ccbluex.liquidbounce.file.FileManager
 import net.ccbluex.liquidbounce.file.config.ConfigManager
-import net.ccbluex.liquidbounce.ui.client.clickgui.ClickGUIModule
-import net.ccbluex.liquidbounce.ui.client.clickgui.ClickGuiConfig
-import net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.ClickGui
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.ClickGUIModule
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.ClickGuiConfig
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.ClickGui
 import net.ccbluex.liquidbounce.ui.client.scriptMenu.scriptOnline.ScriptSubscribe
 import net.ccbluex.liquidbounce.ui.client.scriptMenu.scriptOnline.Subscriptions
 import net.ccbluex.liquidbounce.script.ScriptManager

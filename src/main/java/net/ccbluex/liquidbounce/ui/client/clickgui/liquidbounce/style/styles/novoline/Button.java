@@ -1,8 +1,8 @@
-package net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.style.styles.novoline;
+package net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.style.styles.novoline;
 
 
 import net.ccbluex.liquidbounce.features.module.Module;
-import net.ccbluex.liquidbounce.ui.client.clickgui.ClickGUIModule;
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.ClickGUIModule;
 import net.ccbluex.liquidbounce.ui.font.Fonts;
 import net.ccbluex.liquidbounce.ui.font.GameFontRenderer;
 import net.ccbluex.liquidbounce.utils.render.RenderUtils;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class Button {
     public Module cheat;
-    public net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.style.styles.novoline.Window parent;
+    public net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.style.styles.novoline.Window parent;
     public int x;
     public float y;
     public int index;

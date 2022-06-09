@@ -1,4 +1,4 @@
-package net.ccbluex.liquidbounce.ui.client.clickgui;
+package net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce;
 
 import net.ccbluex.liquidbounce.LiquidBounce;
 import net.ccbluex.liquidbounce.event.EventTarget;
@@ -6,9 +6,9 @@ import net.ccbluex.liquidbounce.event.PacketEvent;
 import net.ccbluex.liquidbounce.features.module.Module;
 import net.ccbluex.liquidbounce.features.module.ModuleCategory;
 import net.ccbluex.liquidbounce.features.module.ModuleInfo;
-import net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.ClickGui;
-import net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.style.styles.*;
-import net.ccbluex.liquidbounce.ui.client.clickgui.clickgui.style.styles.novoline.ClickyUI;
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.ClickGui;
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.style.styles.*;
+import net.ccbluex.liquidbounce.ui.client.clickgui.liquidbounce.style.styles.novoline.ClickyUI;
 import net.ccbluex.liquidbounce.utils.render.ColorUtils;
 import net.ccbluex.liquidbounce.value.BoolValue;
 import net.ccbluex.liquidbounce.value.FloatValue;

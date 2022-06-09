@@ -23,7 +23,7 @@ import net.minecraft.stats.StatList
 @ModuleInfo(name = "Criticals", category = ModuleCategory.COMBAT)
 class Criticals : Module() {
 
-    val modeValue = ListValue("Mode", arrayOf("Packet", "NCPPacket", "MiPacket", "Hypixel", "Hypixel2", "VulcanSemi", "AACPacket", "AAC4.3.11OldHYT", "AAC5.0.4", "NoGround", "TPHop", "FakeCollide", "Mineplex", "More", "TestMinemora", "Motion", "Hover"), "packet")
+    val modeValue = ListValue("Mode", arrayOf("Packet", "NCPPacket", "MiPacket", "Hypixel", "Hypixel2", "VulcanSemi", "AACPacket", "Hyt", "AAC5.0.4", "NoGround", "TPHop", "FakeCollide", "Motion", "Hover"), "packet")
     private val motionValue = ListValue("MotionMode", arrayOf("RedeSkyLowHop", "Hop", "Jump", "LowJump", "MinemoraTest"), "Jump")
     private val hoverValue = ListValue("HoverMode", arrayOf("AAC4", "AAC4Other", "OldRedesky", "Normal1", "Normal2", "Minis", "Minis2", "TPCollide", "2b2t"), "AAC4")
     private val hoverNoFall = BoolValue("HoverNoFall", true).displayable { modeValue.equals("Hover") }
@@ -68,7 +68,7 @@ class Criticals : Module() {
             if(s08FlagValue.get() && !flagTimer.hasTimePassed(s08DelayValue.get().toLong()))
                 return
 
-            fun sendCriticalPacket(xOffset: Double = 0.0, yOffset: Double = 0.0, zOffset: Double = 0.0, ground: Boolean) {
+            fun sendCriticalPacket(xOffset: Double = 0.0, yOffset: Double = 0.0, zOffset: Double = 0.0, ground: Boolean = false) {
                 val x = mc.thePlayer.posX + xOffset
                 val y = mc.thePlayer.posY + yOffset
                 val z = mc.thePlayer.posZ + zOffset
@@ -82,78 +82,59 @@ class Criticals : Module() {
             when (modeValue.get().lowercase()) {
                 "packet" -> {
                     sendCriticalPacket(yOffset = 0.0625, ground = true)
-                    sendCriticalPacket(ground = false)
-                    sendCriticalPacket(yOffset = 1.1E-5, ground = false)
-                    sendCriticalPacket(ground = false)
+                    sendCriticalPacket()
+                    sendCriticalPacket(yOffset = 1.1E-5)
+                    sendCriticalPacket()
                 }
 
                 "ncppacket" -> {
-                    sendCriticalPacket(yOffset = 0.11, ground = false)
-                    sendCriticalPacket(yOffset = 0.1100013579, ground = false)
-                    sendCriticalPacket(yOffset = 0.0000013579, ground = false)
+                    sendCriticalPacket(yOffset = 0.11)
+                    sendCriticalPacket(yOffset = 0.1100013579)
+                    sendCriticalPacket(yOffset = 0.0000013579)
+                }
+
+                "hyt" -> {
+                    sendCriticalPacket(yOffset = 0.000511322554)
+                    sendCriticalPacket(yOffset = 0.00011119999543618)
+                    sendCriticalPacket(yOffset = 0.00006221)
                 }
                 
                 "mipacket" -> {
-                    sendCriticalPacket(yOffset = 0.0625, ground = false)
-                    sendCriticalPacket(ground = false)
+                    sendCriticalPacket(yOffset = 0.0625)
+                    sendCriticalPacket()
                 }
                 
                 "aac5.0.4" -> { //aac5.0.4 moment but with bad cfg(cuz it will flag for timer)
-                    sendCriticalPacket(yOffset = 0.00133545, ground = false)
-                    sendCriticalPacket(yOffset = -0.000000433, ground = false)
+                    sendCriticalPacket(yOffset = 0.00133545)
+                    sendCriticalPacket(yOffset = -0.000000433)
                 }
 
                 "hypixel" -> {
-                    sendCriticalPacket(yOffset = 0.04132332, ground = false)
-                    sendCriticalPacket(yOffset = 0.023243243674, ground = false)
-                    sendCriticalPacket(yOffset = 0.01, ground = false)
-                    sendCriticalPacket(yOffset = 0.0011, ground = false)
-                }
-
-                "aac4.3.11oldhyt" -> {
-                    sendCriticalPacket(yOffset = 0.042487, ground = false)
-                    sendCriticalPacket(yOffset = 0.0104649713461000007, ground = false)
-                    sendCriticalPacket(yOffset = 0.0014749900000101, ground = false)
-                    sendCriticalPacket(yOffset = 0.0000007451816400000, ground = false)
+                    sendCriticalPacket(yOffset = 0.04132332)
+                    sendCriticalPacket(yOffset = 0.023243243674)
+                    sendCriticalPacket(yOffset = 0.01)
+                    sendCriticalPacket(yOffset = 0.0011)
                 }
                 
                 "vulcansemi" -> {
                     attacks++
                     if(attacks > 6) {
-                        sendCriticalPacket(yOffset = 0.2, ground = false)
-                        sendCriticalPacket(yOffset = 0.1216, ground = false)
+                        sendCriticalPacket(yOffset = 0.2)
+                        sendCriticalPacket(yOffset = 0.1216)
                         attacks = 0
                     }
                 }
                 
                 "hypixel2" -> {
-                    sendCriticalPacket(yOffset = 0.05250000001304, ground = false)
-                    sendCriticalPacket(yOffset = 0.00150000001304, ground = false)
-                }
-
-                "mineplex" -> {
-                    sendCriticalPacket(yOffset = 0.0000000000000045, ground = false)
-                    sendCriticalPacket(ground = false)
-                }
-
-                "more" -> {
-                    sendCriticalPacket(yOffset = 0.00000000001, ground = false)
-                    sendCriticalPacket(ground = false)
-                }
-
-                // Minemora criticals without test
-                "testminemora" -> {
-                    sendCriticalPacket(yOffset = 0.0114514, ground = false)
-                    sendCriticalPacket(yOffset = 0.0010999999940395355, ground = false)
-                    sendCriticalPacket(yOffset = 0.00150000001304, ground = false)
-                    sendCriticalPacket(yOffset = 0.0012016413, ground = false)
+                    sendCriticalPacket(yOffset = 0.05250000001304)
+                    sendCriticalPacket(yOffset = 0.00150000001304)
                 }
 
                 "aacpacket" -> {
-                    sendCriticalPacket(yOffset = 0.05250000001304, ground = false)
-                    sendCriticalPacket(yOffset = 0.00150000001304, ground = false)
-                    sendCriticalPacket(yOffset = 0.01400000001304, ground = false)
-                    sendCriticalPacket(yOffset = 0.00150000001304, ground = false)
+                    sendCriticalPacket(yOffset = 0.05250000001304)
+                    sendCriticalPacket(yOffset = 0.00150000001304)
+                    sendCriticalPacket(yOffset = 0.01400000001304)
+                    sendCriticalPacket(yOffset = 0.00150000001304)
                 }
 
                 "fakecollide" -> {
@@ -167,13 +148,13 @@ class Criticals : Module() {
                         motionZ = 0.00
                     }
                     mc.thePlayer.triggerAchievement(StatList.jumpStat)
-                    sendCriticalPacket(xOffset = motionX / 3, yOffset = 0.20000004768372, zOffset = motionZ / 3, ground = false)
-                    sendCriticalPacket(xOffset = motionX / 1.5, yOffset = 0.12160004615784, zOffset = motionZ / 1.5, ground = false)
+                    sendCriticalPacket(xOffset = motionX / 3, yOffset = 0.20000004768372, zOffset = motionZ / 3)
+                    sendCriticalPacket(xOffset = motionX / 1.5, yOffset = 0.12160004615784, zOffset = motionZ / 1.5)
                 }
 
                 "tphop" -> {
-                    sendCriticalPacket(yOffset = 0.02, ground = false)
-                    sendCriticalPacket(yOffset = 0.01, ground = false)
+                    sendCriticalPacket(yOffset = 0.02)
+                    sendCriticalPacket(yOffset = 0.01)
                     mc.thePlayer.setPosition(mc.thePlayer.posX, mc.thePlayer.posY + 0.01, mc.thePlayer.posZ)
                 }
 
