@@ -24,7 +24,7 @@ class GuiServerSpoof(private val prevGui: GuiScreen) : GuiScreen() {
     }
 
     private fun updateButtonStat() {
-        stat.displayString = "%ui.status%: " + if (ServerSpoof.enable) "§a%ui.on%" else "§c%ui.off%"
+        stat.displayString = "%ui.status%: " + if (ServerSpoof.enable) "§aOn" else "§cOff"
     }
 
     override fun drawScreen(mouseX: Int, mouseY: Int, partialTicks: Float) {

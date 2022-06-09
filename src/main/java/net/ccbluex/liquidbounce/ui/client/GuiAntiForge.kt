@@ -18,15 +18,15 @@ class GuiAntiForge(private val prevGui: GuiScreen) : GuiScreen() {
         buttonList.add(GuiButton(2, width / 2 - 100, height / 4 + 50 + 25, "Button").also { fmlButton = it })
         buttonList.add(GuiButton(3, width / 2 - 100, height / 4 + 50 + 25 * 2, "Button").also { proxyButton = it })
         buttonList.add(GuiButton(4, width / 2 - 100, height / 4 + 50 + 25 * 3, "Button").also { payloadButton = it })
-        buttonList.add(GuiButton(0, width / 2 - 100, height / 4 + 55 + 25 * 4 + 5, "%ui.back%"))
+        buttonList.add(GuiButton(0, width / 2 - 100, height / 4 + 55 + 25 * 4 + 5, "Back"))
         updateButtonStat()
     }
 
     private fun updateButtonStat() {
-        enabledButton.displayString = "%ui.status%: " + if (AntiForge.enabled) "§a%ui.on%" else "§c%ui.off%"
-        fmlButton.displayString = "FML Brand: " + if (AntiForge.blockFML) "§a%ui.on%" else "§c%ui.off%"
-        proxyButton.displayString = "FML Proxy Packets: " + if (AntiForge.blockProxyPacket) "§a%ui.on%" else "§c%ui.off%"
-        payloadButton.displayString = "Payload Packets: " + if (AntiForge.blockPayloadPackets) "§a%ui.on%" else "§c%ui.off%"
+        enabledButton.displayString = "Status: " + if (AntiForge.enabled) "§aOn" else "§cOff"
+        fmlButton.displayString = "FML Brand: " + if (AntiForge.blockFML) "§aOn" else "§cOff"
+        proxyButton.displayString = "FML Proxy Packets: " + if (AntiForge.blockProxyPacket) "§aOn" else "§cOff"
+        payloadButton.displayString = "Payload Packets: " + if (AntiForge.blockPayloadPackets) "§aOn" else "§cOff"
     }
 
     override fun actionPerformed(button: GuiButton) {
@@ -45,7 +45,7 @@ class GuiAntiForge(private val prevGui: GuiScreen) : GuiScreen() {
 
     override fun drawScreen(mouseX: Int, mouseY: Int, partialTicks: Float) {
         drawBackground(0)
-        mc.fontRendererObj.drawCenteredString("%ui.antiForge%", width / 2f, height / 8f + 5f, 4673984, true)
+        mc.fontRendererObj.drawCenteredString("AntiForge", width / 2f, height / 8f + 5f, 4673984, true)
         super.drawScreen(mouseX, mouseY, partialTicks)
     }
 

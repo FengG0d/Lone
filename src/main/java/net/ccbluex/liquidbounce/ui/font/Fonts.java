@@ -10,6 +10,7 @@ import net.minecraft.client.gui.FontRenderer;
 import java.awt.*;
 import java.io.*;
 import java.lang.reflect.Field;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,8 +25,14 @@ public class Fonts {
     @FontDetails(fontName = "Medium", fontSize = 40, fileName = "regular.ttf")
     public static GameFontRenderer font40;
 
-//    @FontDetails(fontName = "Huge", fontSize = 60, fileName = "regular.ttf")
-//    public static GameFontRenderer font60;
+    @FontDetails(fontName = "Tenacity", fontSize = 43, fileName = "tenacity.ttf")
+    public static GameFontRenderer ten43;
+
+    @FontDetails(fontName = "Tenacity", fontSize = 35, fileName = "tenacity.ttf")
+    public static GameFontRenderer ten35;
+
+    @FontDetails(fontName = "Tenacity Icon", fontSize = 60, fileName = "tenacityicon.ttf")
+    public static GameFontRenderer tenIcon60;
 
     @FontDetails(fontName = "Minecraft Font")
     public static final FontRenderer minecraftFont = Minecraft.getMinecraft().fontRendererObj;
@@ -95,6 +102,8 @@ public class Fonts {
     private static void initFonts() {
         try {
             initSingleFont("regular.ttf","assets/minecraft/lone/font/regular.ttf");
+            initSingleFont("tenacity.ttf","assets/minecraft/lone/font/tenacity.ttf");
+            initSingleFont("tenacityicon.ttf","assets/minecraft/lone/font/tenacityicon.ttf");
         }catch(IOException e) {
             e.printStackTrace();
         }
@@ -175,7 +184,7 @@ public class Fonts {
 
     private static Font getFont(final String fontName, final int size) {
         try {
-            final InputStream inputStream = new FileInputStream(new File(LiquidBounce.fileManager.getFontsDir(), fontName));
+            final InputStream inputStream = Files.newInputStream(new File(LiquidBounce.fileManager.getFontsDir(), fontName).toPath());
             Font awtClientFont = Font.createFont(Font.TRUETYPE_FONT, inputStream);
             awtClientFont = awtClientFont.deriveFont(Font.PLAIN, size);
             inputStream.close();

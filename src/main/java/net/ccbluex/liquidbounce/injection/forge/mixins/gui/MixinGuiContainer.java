@@ -53,7 +53,7 @@ public abstract class MixinGuiContainer extends MixinGuiScreen {
                 mc.currentScreen = guiScreen;
                 // hide GUI
                 if (chestStealer.getSilentTitleValue().get()) {
-                    RendererExtensionKt.drawCenteredString(mc.fontRendererObj, "%ui.chest.stealing%", width / 2, (height / 2) + 30, 0xffffffff, false);
+                    RendererExtensionKt.drawCenteredString(mc.fontRendererObj, "Stealing", width / 2, (height / 2) + 30, 0xffffffff, false);
                 }
                 callbackInfo.cancel();
             }

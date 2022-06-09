@@ -15,6 +15,8 @@ object LanguageManager {
 
     private val cachedStrings = HashMap<String, String>()
 
+    private val translateMap = java.util.HashMap<String, String>()
+
     fun replace(text: String): String {
         if (!text.contains(key)) {
             return text
@@ -64,8 +66,6 @@ object LanguageManager {
             }
         }
     }
-
-    private val translateMap = java.util.HashMap<String, String>()
     fun get(key: String): String {
         return translateMap[key] ?: key
     }

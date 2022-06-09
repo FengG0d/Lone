@@ -139,7 +139,7 @@ class Text(
 
         return result.toString()
     }
-    fun getClientName(i: Int,i2: Int): String{
+    private fun getClientName(i: Int, i2: Int): String{
         return "Lone".substring(i,i2);
     }
     /**
@@ -191,10 +191,10 @@ class Text(
         }else{
             FontLoaders.F40.drawString(
 
-                getClientName(0,3), 5F, 0F,Color(255,255,255,180).rgb
+                getClientName(0,1), 5F, 0F,Color(255,255,255,180).rgb
             )
             FontLoaders.C16.drawString(
-                getClientName(3,9), 5F + FontLoaders.F40.getStringWidth("Lone"), 13F,Color(255,255,255,180).rgb
+                getClientName(1,3), 5F + FontLoaders.F40.getStringWidth("Lone"), 13F,Color(255,255,255,180).rgb
             )
             RenderUtils.drawRect(5f,22.5f,70f,22.8f,Color(200,200,200,120).rgb)
             FontLoaders.C14.drawString(

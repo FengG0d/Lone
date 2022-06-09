@@ -28,7 +28,7 @@ class GuiProxySelect(private val prevGui: GuiScreen) : GuiScreen() {
 
     private fun updateButtonStat() {
         type.displayString = "%ui.proxy.type%: " + ProxyManager.proxyType.name
-        stat.displayString = "%ui.status%: " + if (ProxyManager.isEnable) "§a%ui.on%" else "§c%ui.off%"
+        stat.displayString = "%ui.status%: " + if (ProxyManager.isEnable) "§aOn" else "§cOff"
     }
 
     override fun drawScreen(mouseX: Int, mouseY: Int, partialTicks: Float) {

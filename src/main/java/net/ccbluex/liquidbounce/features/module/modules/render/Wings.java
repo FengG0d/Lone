@@ -1,4 +1,4 @@
-package net.ccbluex.liquidbounce.features.module.modules.client;
+package net.ccbluex.liquidbounce.features.module.modules.render;
 
 import java.awt.Color;
 
@@ -12,13 +12,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 
-@ModuleInfo(name = "Wings", category = ModuleCategory.CLIENT, array = false)
+@ModuleInfo(name = "Wings", category = ModuleCategory.RENDER)
 public class Wings extends Module {
-
     @EventTarget
     public void onRenderPlayer(Render3DEvent event) {
         RenderWings renderWings = new RenderWings();
         renderWings.renderWings(event.getPartialTicks());
     }
-
 }

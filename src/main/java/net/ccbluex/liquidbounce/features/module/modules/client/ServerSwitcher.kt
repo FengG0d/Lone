@@ -10,6 +10,6 @@ import net.minecraft.client.gui.GuiMultiplayer
 
 class ServerSwitcher : Module() {
     override fun onEnable() {
-        mc.displayGuiScreen(GuiMultiplayer(GuiMainMenu()))
+        mc.displayGuiScreen(GuiMultiplayer(null))
     }
 } 

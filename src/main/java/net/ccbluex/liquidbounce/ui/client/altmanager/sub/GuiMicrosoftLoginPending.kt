@@ -27,7 +27,7 @@ class GuiMicrosoftLoginPending(private val prevGui: GuiScreen) : GuiScreen() {
 
             override fun authResult(account: MicrosoftAccount) {
                 if (LiquidBounce.fileManager.accountsConfig.altManagerMinecraftAccounts.any { it.name == account.name }) {
-                    stage = "§c%ui.alt.alreadyAdded%"
+                    stage = "§cAlready added"
                     return
                 }
                 LiquidBounce.fileManager.accountsConfig.altManagerMinecraftAccounts.add(account)
